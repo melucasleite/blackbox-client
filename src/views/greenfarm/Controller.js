@@ -35,6 +35,7 @@ const Controller = (props) => {
 Controller.defaultProps = {
   controller: {
     name: "TIC 101",
+    id: 24,
   },
 };
 

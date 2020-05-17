@@ -1,67 +1,35 @@
 import React, { useEffect, useState } from "react";
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  Row,
-  Col,
-  ButtonGroup,
-  Button,
-} from "shards-react";
+import { Card, CardBody, Row, Col } from "shards-react";
 
 import PidGraph from "./PidGraph";
-import { getRandomVector } from "../../../utils";
+import { fetchPidGraph } from "../../../utils/api";
+import TimeScale from "./TimeScale";
 
-const GraphCard = (props) => {
-  const [dataset, setDataset] = useState(randomData);
+const GraphCard = ({ controller }) => {
+  const [dataset, setDataset] = useState({});
+  const [scale, setScale] = useState(5);
+  const refreshFrequency = 3000;
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      onButtonClick();
-    }, 1000);
+    const timer = setInterval(async () => {
+      const dataset = await fetchPidGraph(controller.id, scale);
+      setDataset(dataset);
+    }, refreshFrequency);
     return () => clearTimeout(timer);
-  }, []);
+  }, [controller.id, scale]);
 
-  const onButtonClick = () => {
-    setDataset(randomData);
-  };
-
-  const { title } = props;
   return (
     <Card small className="h-100">
-      <CardHeader className="border-bottom">
-        <h6 className="m-0">{title}</h6>
-        <div className="block-handle" />
-      </CardHeader>
-
-      <CardBody className="pt-0">
+      <CardBody>
         <Row className="border-bottom py-2 bg-light">
           <Col sm="6" className="col d-flex mb-2 mb-sm-0">
-            <ButtonGroup>
-              <Button theme="white" active>
-                5s
-              </Button>
-              <Button theme="white" onClick={onButtonClick}>
-                1m
-              </Button>
-              <Button theme="white">1h</Button>
-              <Button theme="white">4h</Button>
-            </ButtonGroup>
+            <TimeScale active={scale} setActive={setScale} />
           </Col>
         </Row>
         <PidGraph dataset={dataset} />
       </CardBody>
     </Card>
   );
-};
-
-const randomData = () => {
-  return {
-    target: getRandomVector(30),
-    reading: getRandomVector(30),
-    output: getRandomVector(30),
-    labels: getRandomVector(30),
-  };
 };
 
 export default GraphCard;
