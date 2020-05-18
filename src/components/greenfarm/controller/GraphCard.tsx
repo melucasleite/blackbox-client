@@ -13,6 +13,7 @@ const GraphCard = ({ controller }) => {
   const refreshFrequency = 3000;
 
   useEffect(() => {
+    setIsLoading(true);
     const loadGraph = async () => {
       const dataset = await fetchPidGraph(controller.id, scale);
       setDataset(dataset);

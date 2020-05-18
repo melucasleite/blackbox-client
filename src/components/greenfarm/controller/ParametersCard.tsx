@@ -25,6 +25,7 @@ const ParametersCard = ({ controller }) => {
   }, [controller.id]);
 
   useEffect(() => {
+    setIsLoading(true);
     fetchData();
   }, [fetchData]);
   return (
