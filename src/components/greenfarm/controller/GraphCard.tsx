@@ -26,14 +26,18 @@ const GraphCard = ({ controller }) => {
 
   return (
     <Card small className="h-100">
-      <CardBody>
-        <Row className="border-bottom py-2 bg-light">
-          <Col sm="6" className="col d-flex mb-2 mb-sm-0">
-            <TimeScale active={scale} setActive={setScale} />
-          </Col>
-        </Row>
-        {isLoading ? <Loading /> : <PidGraph dataset={dataset} />}
-      </CardBody>
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <CardBody>
+          <Row className="border-bottom py-2 bg-light">
+            <Col sm="6" className="col d-flex mb-2 mb-sm-0">
+              <TimeScale active={scale} setActive={setScale} />
+            </Col>
+          </Row>
+          <PidGraph dataset={dataset} />
+        </CardBody>
+      )}
     </Card>
   );
 };
