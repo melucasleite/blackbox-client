@@ -3,9 +3,9 @@ import colors from "../../../utils/colors";
 import Chart from "chart.js";
 
 const PidGraph = (props) => {
-  const legendRef = useRef(null);
-  const canvasRef = useRef(null);
-  const [chartInstance, setChartInstance] = useState(null);
+  const legendRef = useRef<HTMLDivElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [chartInstance, setChartInstance] = useState<Chart>();
 
   useEffect(() => {
     const newChart = new Chart(canvasRef.current, {
@@ -13,7 +13,9 @@ const PidGraph = (props) => {
       data: props.chartData,
       options: chartOptions,
     });
-    legendRef.current.innerHTML = newChart.generateLegend();
+    if (legendRef && legendRef.current) {
+      legendRef.current.innerHTML = newChart.generateLegend();
+    }
     setChartInstance(newChart);
   }, [canvasRef, legendRef, props.chartData]);
 

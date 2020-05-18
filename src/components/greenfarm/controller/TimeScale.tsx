@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "shards-react";
 import ControlledButtonGroup from "../common/ControlledButtonGroup";
 
 const TimeScale = ({ active, setActive }) => {

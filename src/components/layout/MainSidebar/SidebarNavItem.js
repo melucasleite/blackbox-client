@@ -1,9 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { NavLink as RouteNavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import {
   NavItem,
-  NavLink,
   DropdownMenu,
   DropdownItem,
   Collapse
@@ -32,8 +31,7 @@ class SidebarNavItem extends React.Component {
     return (
       <NavItem style={{ position: "relative" }}>
         <NavLink
-          className={hasSubItems && "dropdown-toggle"}
-          tag={hasSubItems ? "a" : RouteNavLink}
+          className="nav-link"
           to={hasSubItems ? "#" : item.to}
           onClick={() => this.toggleDropdown(item)}
         >
@@ -54,7 +52,7 @@ class SidebarNavItem extends React.Component {
         {hasSubItems && (
           <Collapse tag={DropdownMenu} small open={item.open} style={{ top: 0 }}>
             {item.items.map((subItem, idx) => (
-              <DropdownItem key={idx} tag={RouteNavLink} to={subItem.to}>
+              <DropdownItem key={idx} tag={NavLink} to={subItem.to}>
                 {subItem.title}
               </DropdownItem>
             ))}

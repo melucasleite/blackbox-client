@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardBody, CardHeader, Col } from "shards-react";
+import { Card, CardBody } from "shards-react";
 
 const ControllersTable = () => {
   return (
