@@ -102,7 +102,9 @@ const ParametersForm = ({ parameters, handleSubmit }) => {
           </div>
         </Col>
       </Row>
-      <Button className="float-right" type="submit">Update</Button>
+      <Button className="float-right" type="submit">
+        Update
+      </Button>
     </Form>
   );
 };

@@ -10,7 +10,7 @@ export const fetchPidGraph = (controllerId, scale, dataPoints = 20) => {
         output: getRandomVector(dataPoints),
         labels: getRandomVector(dataPoints),
       });
-    }, 350);
+    }, 800);
   });
 };
 

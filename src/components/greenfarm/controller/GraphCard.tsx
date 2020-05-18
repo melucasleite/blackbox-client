@@ -4,16 +4,19 @@ import { Card, CardBody, Row, Col } from "shards-react";
 import PidGraph from "./PidGraph";
 import { fetchPidGraph } from "../../../utils/api";
 import TimeScale from "./TimeScale";
+import Loading from "../common/Loading";
 
 const GraphCard = ({ controller }) => {
   const [dataset, setDataset] = useState({});
   const [scale, setScale] = useState(5);
+  const [isLoading, setIsLoading] = useState(true);
   const refreshFrequency = 3000;
 
   useEffect(() => {
     const loadGraph = async () => {
       const dataset = await fetchPidGraph(controller.id, scale);
       setDataset(dataset);
+      setIsLoading(false);
     };
     loadGraph();
     const timer = setInterval(loadGraph, refreshFrequency);
@@ -28,7 +31,7 @@ const GraphCard = ({ controller }) => {
             <TimeScale active={scale} setActive={setScale} />
           </Col>
         </Row>
-        <PidGraph dataset={dataset} />
+        {isLoading ? <Loading /> : <PidGraph dataset={dataset} />}
       </CardBody>
     </Card>
   );
