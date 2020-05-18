@@ -16,5 +16,5 @@ export const useInputChange = (defaults) => {
     });
   };
 
-  return [input, handleInputChange];
+  return [input, handleInputChange, setInput];
 };

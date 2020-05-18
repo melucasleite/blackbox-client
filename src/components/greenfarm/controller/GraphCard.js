@@ -11,10 +11,12 @@ const GraphCard = ({ controller }) => {
   const refreshFrequency = 3000;
 
   useEffect(() => {
-    const timer = setInterval(async () => {
+    const loadGraph = async () => {
       const dataset = await fetchPidGraph(controller.id, scale);
       setDataset(dataset);
-    }, refreshFrequency);
+    };
+    loadGraph();
+    const timer = setInterval(loadGraph, refreshFrequency);
     return () => clearTimeout(timer);
   }, [controller.id, scale]);
 

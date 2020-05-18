@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Button,
   Col,
@@ -11,14 +11,19 @@ import {
 import { useInputChange } from "../../../utils";
 import { analogPins, digitalPins } from "../../../consts";
 
-const ParametersForm = (props) => {
-  const [input, handleInputChange] = useInputChange(props.parameters);
-  const handleSubmit = (e) => {
+const ParametersForm = ({ parameters, handleSubmit }) => {
+  const [input, handleInputChange, setInput] = useInputChange(parameters);
+
+  useEffect(() => {
+    setInput(parameters);
+  }, [setInput, parameters]);
+
+  const formOnSubmit = (e) => {
     e.preventDefault();
-    props.handleSubmit(input);
+    handleSubmit(input);
   };
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={formOnSubmit}>
       <FormGroup>
         <label>Name</label>
         <FormInput
@@ -97,7 +102,7 @@ const ParametersForm = (props) => {
           </div>
         </Col>
       </Row>
-      <Button type="submit">Update</Button>
+      <Button className="float-right" type="submit">Update</Button>
     </Form>
   );
 };
