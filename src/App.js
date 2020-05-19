@@ -6,6 +6,7 @@ import routes from "./routes";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./assets/main.scss";
 import withTracker from './withTracker'
+import "./utils/chart";
 
 export default () => (
   <Router basename={process.env.REACT_APP_BASENAME || ""}>
