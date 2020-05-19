@@ -4,7 +4,7 @@ import ParametersForm from "./ParametersForm";
 import {
   fetchControllerParameters,
   updateControllerParameters,
-} from "../../utils/api";
+} from "../../api/api";
 import swal from "sweetalert";
 import Loading from "../common/Loading";
 

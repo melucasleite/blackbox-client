@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Card, CardBody, Row, Col } from "shards-react";
 
 import PidGraph from "./PidGraph";
-import { fetchPidGraph } from "../../utils/api";
+import { fetchPidGraph } from "../../api/api";
 import TimeScale from "./TimeScale";
 import Loading from "../common/Loading";
 
