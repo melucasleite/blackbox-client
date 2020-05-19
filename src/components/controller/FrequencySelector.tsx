@@ -1,7 +1,7 @@
 import React from "react";
 import ControlledButtonGroup from "../common/ControlledButtonGroup";
 
-const TimeScale = ({ active, setActive }) => {
+const FrequencySelector = ({ active, setActive }) => {
   const options = [
     {
       name: "5s",
@@ -34,4 +34,4 @@ const TimeScale = ({ active, setActive }) => {
   );
 };
 
-export default TimeScale;
+export default FrequencySelector;

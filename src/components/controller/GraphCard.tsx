@@ -3,7 +3,7 @@ import { Card, CardBody, Row, Col } from "shards-react";
 
 import PidGraph from "./PidGraph";
 import { fetchPidGraph } from "../../api/api";
-import TimeScale from "./TimeScale";
+import FrequencySelector from "./FrequencySelector";
 import Loading from "../common/Loading";
 
 const GraphCard = ({ controller }) => {
@@ -32,7 +32,7 @@ const GraphCard = ({ controller }) => {
         <CardBody>
           <Row className="border-bottom py-2 bg-light">
             <Col sm="6" className="col d-flex mb-2 mb-sm-0">
-              <TimeScale active={scale} setActive={setScale} />
+              <FrequencySelector active={scale} setActive={setScale} />
             </Col>
           </Row>
           <PidGraph dataset={dataset} />
