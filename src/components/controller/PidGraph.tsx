@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import colors from "../../../utils/colors";
+import colors from "../../utils/colors";
 import Chart from "chart.js";
 
 const PidGraph = (props) => {

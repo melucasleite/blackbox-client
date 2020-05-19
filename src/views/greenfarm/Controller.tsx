@@ -2,8 +2,8 @@ import React from "react";
 import { Container, Row, Col } from "shards-react";
 
 import PageTitle from "../../components/common/PageTitle";
-import GraphCard from "../../components/greenfarm/controller/GraphCard";
-import ParametersCard from "../../components/greenfarm/controller/ParametersCard";
+import GraphCard from "../../components/controller/GraphCard";
+import ParametersCard from "../../components/controller/ParametersCard";
 
 const Controller = (props) => {
   const { id } = props.match.params;

@@ -8,8 +8,8 @@ import {
   FormSelect,
   Row,
 } from "shards-react";
-import { useInputChange } from "../../../utils";
-import { analogPins, digitalPins } from "../../../consts";
+import { useInputChange } from "../../utils";
+import { analogPins, digitalPins } from "../../consts";
 
 const ParametersForm = ({ parameters, handleSubmit }) => {
   const [input, handleInputChange, setInput] = useInputChange(parameters);

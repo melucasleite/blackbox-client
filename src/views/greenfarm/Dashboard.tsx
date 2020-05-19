@@ -2,8 +2,8 @@ import React from "react";
 import { Container, Row, Col } from "shards-react";
 
 import PageTitle from "../../components/common/PageTitle";
-import ControllersTable from '../../components/greenfarm/ControllersTable'
-import OutputsTable from '../../components/greenfarm/OutputsTable'
+import ControllersTable from '../../components/ControllersTable'
+import OutputsTable from '../../components/OutputsTable'
 
 const Dashboard = () => (
   <Container fluid className="main-content-container px-4">
