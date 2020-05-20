@@ -1,11 +1,9 @@
 import React from "react";
 import { Container, Row, Col } from "shards-react";
 
-import PageTitle from "../../components/common/PageTitle";
-import GraphCard from "../../components/controller/GraphCard";
-import ParametersCard from "../../components/controller/ParametersCard";
+import PageTitle from "../components/common/PageTitle";
 
-const Controller = (props) => {
+const ControllerDoor = (props) => {
   const { id } = props.match.params;
   const controller = {
     name: id,
@@ -16,20 +14,17 @@ const Controller = (props) => {
       <Row noGutters className="page-header py-4">
         <PageTitle
           title={controller.name}
-          subtitle="Controller"
+          subtitle="ControllerDoor"
           className="text-sm-left mb-3"
         />
       </Row>
       <Row>
         <Col sm="12" className="mb-4">
-          <GraphCard controller={controller} />
-        </Col>
-        <Col sm="12">
-          <ParametersCard controller={controller} />
+          <p>ControllerDoor</p>
         </Col>
       </Row>
     </Container>
   );
 };
 
-export default Controller;
+export default ControllerDoor;

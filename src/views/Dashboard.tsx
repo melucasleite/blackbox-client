@@ -1,9 +1,9 @@
 import React from "react";
 import { Container, Row, Col } from "shards-react";
 
-import PageTitle from "../../components/common/PageTitle";
-import ControllersTable from '../../components/ControllersTable'
-import OutputsTable from '../../components/OutputsTable'
+import PageTitle from "../components/common/PageTitle";
+import ControllersTable from '../components/ControllersTable'
+import OutputsTable from '../components/OutputsTable'
 
 const Dashboard = () => (
   <Container fluid className="main-content-container px-4">

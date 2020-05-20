@@ -46,17 +46,17 @@ export default function () {
       ],
     },
     {
-      title: "Events",
+      title: "LOG",
       items: [
         {
-          title: "Door open",
-          to: "/log/door_open",
+          title: "Door",
+          to: "/log/door",
           htmlBefore: '<i class="fa fa-door-open"/>',
           htmlAfter: "",
         },
         {
-          title: "Log",
-          to: "/log/all",
+          title: "Controllers",
+          to: "/log/controllers",
           htmlBefore: '<i class="fa fa-database"/>',
           htmlAfter: "",
         },
