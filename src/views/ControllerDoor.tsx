@@ -1,10 +1,14 @@
-import React from "react";
+import React, { FC } from "react";
 import { Container, Row, Col } from "shards-react";
 
-import PageTitle from "../components/common/PageTitle";
+import PageTitle from "../components/PageTitle";
 
-const ControllerDoor = (props) => {
-  const { id } = props.match.params;
+interface IControllerDoorProps {
+  match: { params: { id: string } };
+}
+
+const ControllerDoor: FC<IControllerDoorProps> = ({ match }) => {
+  const { id } = match.params;
   const controller = {
     name: id,
     id: id,

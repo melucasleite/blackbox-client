@@ -2,7 +2,7 @@ import React from "react";
 import DataGrid from "react-data-grid";
 import { Container, Row, Col } from "shards-react";
 import "react-data-grid/dist/react-data-grid.css";
-import PageTitle from "../components/common/PageTitle";
+import PageTitle from "../components/PageTitle";
 
 const columns = [
   { key: "id", name: "ID" },

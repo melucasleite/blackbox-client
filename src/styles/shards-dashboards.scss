@@ -51,7 +51,7 @@
 @import "blocks/header-navbar";
 
 // Templates
-@import "templates/common"; // Required common styles for all pages.
+@import "templates/common"; // Required legacy styles for all pages.
 @import "templates/analytics";
 @import "templates/ecommerce";
 @import "templates/transaction-history"; // Empty, feel free to add your custom styles.

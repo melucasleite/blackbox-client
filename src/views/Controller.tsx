@@ -1,15 +1,25 @@
-import React from "react";
+import React, { FC } from "react";
 import { Container, Row, Col } from "shards-react";
 
-import PageTitle from "../components/common/PageTitle";
-import GraphCard from "../components/controller/GraphCard";
-import ParametersCard from "../components/controller/ParametersCard";
+import PageTitle from "../components/PageTitle";
+import GraphCard from "../components/GraphCard/GraphCard";
+import ParametersCard from "../components/ParametersCard/ParametersCard";
 
-const Controller = (props) => {
-  const { id } = props.match.params;
+interface IControllerParams {
+  match: { params: { id: string } };
+}
+
+const Controller: FC<IControllerParams> = ({ match }) => {
+  const { id } = match.params;
   const controller = {
-    name: id,
-    id: id,
+      id: id,
+      name: id,
+      P: 0,
+      I: 0,
+      D: 0,
+      inputPort: id,
+      outputPort: id,
+      inputMultiplier: 0
   };
   return (
     <Container fluid className="main-content-container px-4">

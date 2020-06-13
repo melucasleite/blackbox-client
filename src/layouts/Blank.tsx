@@ -1,6 +1,10 @@
-import React from "react";
+import React, { FC } from "react";
 
-const BlankLayout = ({ children }) => (
+interface IBlankLayoutProps {
+  children: any;
+}
+
+const BlankLayout: FC<IBlankLayoutProps> = ({ children }) => (
   <React.Fragment>{children}</React.Fragment>
 );
 
